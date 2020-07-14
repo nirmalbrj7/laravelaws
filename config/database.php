@@ -15,8 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
-
+    'default' => array_key_exists('DB_CONNECTION', $_SERVER) ? $_SERVER['DB_CONNECTION'] : env('DB_CONNECTION'),    
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -64,13 +63,12 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'driver' => 'pgsql',            
+            'host' => array_key_exists('DB_HOST', $_SERVER) ? $_SERVER['DB_HOST'] : env('DB_HOST'),
+            'port' => array_key_exists('DB_PORT', $_SERVER) ? $_SERVER['DB_PORT'] : env('DB_PORT'),
+            'database' => array_key_exists('DB_DATABASE', $_SERVER) ? $_SERVER['DB_DATABASE'] : env('DB_DATABASE'),
+            'username' => array_key_exists('DB_USERNAME', $_SERVER) ? $_SERVER['DB_USERNAME'] : env('DB_USERNAME'),
+            'password' => array_key_exists('DB_PASSWORD', $_SERVER) ? $_SERVER['DB_PASSWORD'] : env('DB_PASSWORD'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
