@@ -64,11 +64,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',            
-            'host' => array_key_exists('DB_HOST', $_SERVER) ? $_SERVER['DB_HOST'] : env('DB_HOST'),
-            'port' => array_key_exists('DB_PORT', $_SERVER) ? $_SERVER['DB_PORT'] : env('DB_PORT'),
-            'database' => array_key_exists('DB_DATABASE', $_SERVER) ? $_SERVER['DB_DATABASE'] : env('DB_DATABASE'),
-            'username' => array_key_exists('DB_USERNAME', $_SERVER) ? $_SERVER['DB_USERNAME'] : env('DB_USERNAME'),
-            'password' => array_key_exists('DB_PASSWORD', $_SERVER) ? $_SERVER['DB_PASSWORD'] : env('DB_PASSWORD'),
+            'host' => array_key_exists('RDS_HOSTNAME', $_SERVER) ? $_SERVER['RDS_HOSTNAME'] : env('RDS_HOSTNAME'),
+            'port' => array_key_exists('RDS_PORT', $_SERVER) ? $_SERVER['RDS_PORT'] : env('RDS_PORT'),
+            'database' => array_key_exists('RDS_DB_NAME', $_SERVER) ? $_SERVER['RDS_DB_NAME'] : env('RDS_DB_NAME'),
+            'username' => array_key_exists('RDS_USERNAME', $_SERVER) ? $_SERVER['RDS_USERNAME'] : env('RDS_USERNAME'),
+            'password' => array_key_exists('RDS_PASSWORD', $_SERVER) ? $_SERVER['RDS_PASSWORD'] : env('RDS_PASSWORD'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
